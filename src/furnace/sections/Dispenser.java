@@ -1,5 +1,6 @@
 package furnace.sections;
 
+import org.osbot.rs07.api.map.Area;
 import org.osbot.rs07.api.map.Position;
 import org.osbot.rs07.api.model.Item;
 import org.osbot.rs07.api.model.RS2Object;
@@ -14,7 +15,7 @@ import static org.osbot.rs07.api.ui.Skill.SMITHING;
 
 public class Dispenser extends Section {
 
-    private Position walkPosition = new Position(1939, 4963, 0);
+    private Area dispenserArea = new Area(1939, 4964, 1940, 4962);
 
     public Dispenser(MethodProvider api, Settings settings) {
         super(api, settings);
@@ -23,8 +24,8 @@ public class Dispenser extends Section {
     public void collectBars() throws InterruptedException {
         Item gloves = api.getInventory().getItem("Ice gloves");
         if (api.getSkills().getExperience(SMITHING) == settings.getXpBeforePlacingOre()) {
-            if (!api.myPosition().equals(walkPosition)) {
-                WalkingEvent walkingEvent = new WalkingEvent(walkPosition);
+            if (!dispenserArea.contains(api.myPosition())) {
+                WalkingEvent walkingEvent = new WalkingEvent(dispenserArea.getRandomPosition());
                 walkingEvent.setMiniMapDistanceThreshold(0);
                 walkingEvent.setBreakCondition(new Condition() {
                     @Override
