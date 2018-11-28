@@ -33,7 +33,9 @@ public class Belt extends Section {
                     } else {
                         Sleep.sleepUntil(() -> !api.getInventory().contains("Gold ore"), 10_000);
                         settings.setXpBeforePlacingOre(api.getSkills().getExperience(SMITHING));
-                        settings.setOreOnBelt(true);
+                        if (!api.getInventory().contains("Gold ore")) {
+                            settings.setOreOnBelt(true);
+                        }
                     }
                 }
             }

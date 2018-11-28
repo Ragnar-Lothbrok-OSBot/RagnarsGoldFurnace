@@ -1,7 +1,6 @@
 package script;
 
 import furnace.BlastFurnace;
-import org.osbot.rs07.api.ui.Skill;
 import org.osbot.rs07.script.Script;
 
 import org.osbot.rs07.script.ScriptManifest;
@@ -14,7 +13,7 @@ import java.io.IOException;
 
 import static org.osbot.rs07.api.ui.Skill.SMITHING;
 
-@ScriptManifest(name = "Ragnar's Gold Furnace", author = "Ragnar Lothbrok", version = 1.0, info = "Ragnar Lothbroks Blast Furnace Gold Script", logo = "")
+@ScriptManifest(name = "Ragnar's Gold Furnace", author = "Ragnar Lothbrok", version = 1.1, info = "Ragnar Lothbroks Blast Furnace Gold Script", logo = "")
 
 public class RagnarsGoldFurnace extends Script {
 
