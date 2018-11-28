@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import static org.osbot.rs07.api.ui.Skill.SMITHING;
 
-@ScriptManifest(name = "Ragnar's Gold Furnace", author = "Ragnar Lothbrok", version = 1.2, info = "Ragnar Lothbroks Blast Furnace Gold Script", logo = "")
+@ScriptManifest(name = "Ragnar's Gold Furnace", author = "Ragnar Lothbrok", version = 1.3, info = "Ragnar Lothbroks Blast Furnace Gold Script", logo = "")
 
 public class RagnarsGoldFurnace extends Script {
 
