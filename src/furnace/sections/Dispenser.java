@@ -6,6 +6,8 @@ import org.osbot.rs07.api.model.Item;
 import org.osbot.rs07.api.model.RS2Object;
 import org.osbot.rs07.api.ui.EquipmentSlot;
 import org.osbot.rs07.event.WalkingEvent;
+import org.osbot.rs07.input.mouse.InventorySlotDestination;
+import org.osbot.rs07.input.mouse.MouseDestination;
 import org.osbot.rs07.script.MethodProvider;
 import org.osbot.rs07.utility.Condition;
 import settings.Settings;
@@ -36,7 +38,10 @@ public class Dispenser extends Section {
                 api.execute(walkingEvent);
             } else {
                 if (gloves != null) {
-                    gloves.hover();
+                    InventorySlotDestination glovePosition = new InventorySlotDestination(api.getBot(), api.getInventory().getSlotForNameThatContains("Ice gloves"));
+                    if (!glovePosition.isHover()) {
+                        glovePosition.setHover(true);
+                    }
                 }
             }
         } else {
